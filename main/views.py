@@ -8,6 +8,8 @@ from .models import Task
 
 def index(request):
     task = Task.objects.all()
+    user = User.objects.all()
+    return render(request, 'main/index.html', {'task': task, 'user': user})
 
 
     return render(request, 'main/index.html', {'task': task})
